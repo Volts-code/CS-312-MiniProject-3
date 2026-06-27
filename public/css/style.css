@@ -1,0 +1,181 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#f4f8ff;
+    color:#1e293b;
+    line-height:1.6;
+}
+
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+
+h1{
+    text-align:center;
+    color:#0f4cbd;
+    margin-bottom:25px;
+    font-size:2.5rem;
+}
+
+
+form{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom:25px;
+}
+
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    font-size:1rem;
+}
+
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:600;
+}
+
+
+button:hover{
+    background:#1d4ed8;
+}
+
+
+.post{
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    border-left:6px solid #2563eb;
+}
+
+
+.post h2{
+    color:#0f4cbd;
+    margin-bottom:10px;
+}
+
+
+.post p{
+    margin-bottom:10px;
+}
+
+
+.post strong{
+    color:#1d4ed8;
+}
+
+
+.post a{
+    display:inline-block;
+    text-decoration:none;
+    background:#0f4cbd;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    margin-right:10px;
+    margin-top:10px;
+}
+
+
+.post a:hover{
+    background:#1d4ed8;
+}
+
+
+.post form{
+    display:inline;
+    background:none;
+    box-shadow:none;
+    padding:0;
+}
+
+
+.navbar{
+    background:#0f4cbd;
+    padding:15px 0;
+}
+
+
+.navbar h1{
+    color:white;
+    margin:0;
+}
+
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+.hero-image{
+   align-self: center;
+    max-height: 528px;
+    filter: drop-shadow(0px 44px 34px rgb(46, 46, 46) );
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#64748b;
+}
+
+
+@media(max-width:768px){
+
+    .container{
+        width:95%;
+        grid-template-columns: 1fr;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    .post{
+        padding:18px;
+    }
+
+    button, .post a{
+        width:100%;
+        margin-top:10px;
+        text-align:center;
+    }
+}
