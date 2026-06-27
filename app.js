@@ -18,6 +18,11 @@ app.use(session({
     saveUninitialized: false
 }));
 
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send("Error: " + err.message);
+});
+
 
 //Home page
 app.get("/", async (req, res) => {
