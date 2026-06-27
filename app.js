@@ -8,20 +8,16 @@ const app = express();
 const PORT = 5000;
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 app.use(session({
     secret: "blogsecret",
     resave: false,
     saveUninitialized: false
 }));
-
-app.use((err, req, res, next) => {
-    console.error(err);
-    res.status(500).send("Error: " + err.message);
-});
 
 
 //Home page
@@ -185,6 +181,15 @@ app.post("/delete/:id", async (req, res) => {
 
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send("Error: " + err.message);
 });
+
+if (process.env.NODE_ENV !== "production") {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
+
+module.exports = app;
