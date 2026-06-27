@@ -12,12 +12,6 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 
-
-//DB connection
-const pool= new Pool({
-    connectionString:'postgres://367e36c2969cf7d13b87afdceb77d9f6095f98c76847c08de239b76d76e725f9:sk_RkgQrK5uh15xjd4Czr-uL@db.prisma.io:5432/postgres?sslmode=require'
-});
-
 app.use(session({
     secret: "blogsecret",
     resave: false,
